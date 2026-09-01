@@ -1,25 +1,339 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Power Starr Jungle Stay | Stay Close to Nature</title>
 
 <!-- Bootstrap 5 -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
 
 <!-- Bootstrap Icons -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<!-- Google Fonts -->
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
 
 <!-- Custom CSS -->
 <link rel="stylesheet" href="style.css">
 
+<style>
+
+    /* ================= CONTACT BUTTONS ================= */
+
+    .contact-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .contact-btn {
+        min-width: 220px;
+        padding: 14px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .contact-btn:hover {
+        transform: translateY(-3px);
+    }
+
+    .btn-whatsapp {
+        background: #25D366;
+        color: white;
+        border: none;
+    }
+
+    .btn-whatsapp:hover {
+        background: #1ebe5d;
+        color: white;
+    }
+
+    /* ================= NAVBAR CONTACT ================= */
+
+    .navbar-contact {
+        display: flex;
+        gap: 8px;
+        margin-left: 15px;
+    }
+
+    .enquiry-btn {
+        display: inline-block;
+        padding: 10px 16px;
+        background: #2e7d32;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: bold;
+        border-radius: 8px;
+        transition: 0.3s;
+    }
+
+    .enquiry-btn:hover {
+        background: #1b5e20;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    /* ================= LOCATION ================= */
+
+    .location-section {
+        padding: 80px 20px;
+        background: #f6f8f5;
+        font-family: Arial, sans-serif;
+    }
+
+    .location-container {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .location-heading {
+        text-align: center;
+        margin-bottom: 45px;
+    }
+
+    .location-heading span {
+        color: #2e7d32;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .location-heading h2 {
+        font-size: 38px;
+        margin: 12px 0;
+        color: #1d3320;
+    }
+
+    .location-heading p {
+        color: #666;
+        font-size: 17px;
+    }
+
+    .location-main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        background: white;
+        border-radius: 18px;
+        overflow: hidden;
+        box-shadow: 0 10px 35px rgba(0,0,0,0.10);
+        margin-bottom: 70px;
+    }
+
+    .map-box iframe {
+        width: 100%;
+        height: 450px;
+        border: 0;
+        display: block;
+    }
+
+    .location-details {
+        padding: 45px 35px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .location-icon {
+        font-size: 42px;
+    }
+
+    .location-details h3 {
+        font-size: 27px;
+        color: #1d3320;
+        margin: 15px 0;
+    }
+
+    .location-details p {
+        color: #666;
+        line-height: 1.7;
+    }
+
+    .location-description {
+        margin-top: 10px;
+    }
+
+    .direction-btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 14px 22px;
+        background: #2e7d32;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        text-align: center;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .direction-btn:hover {
+        background: #1b5e20;
+        color: white;
+        transform: translateY(-2px);
+    }
+
+    .nearby-heading {
+        text-align: center;
+        margin-bottom: 35px;
+    }
+
+    .nearby-heading h2 {
+        font-size: 32px;
+        color: #1d3320;
+        margin-bottom: 8px;
+    }
+
+    .nearby-heading p {
+        color: #666;
+    }
+
+    .nearby-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .place-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        transition: 0.3s;
+    }
+
+    .place-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.14);
+    }
+
+    .place-image {
+        height: 130px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 60px;
+        background: #e8f1e6;
+    }
+
+    .place-content {
+        padding: 22px;
+    }
+
+    .place-content h3 {
+        color: #1d3320;
+        font-size: 21px;
+        margin-top: 0;
+    }
+
+    .place-content p {
+        color: #666;
+        line-height: 1.6;
+        min-height: 75px;
+    }
+
+    .place-content a {
+        color: #2e7d32;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    /* ================= FOOTER ================= */
+
+    .footer-contact {
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-contact li {
+        margin-bottom: 12px;
+    }
+
+    .footer-contact a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .footer-contact a:hover {
+        color: #2e7d32;
+    }
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 991px) {
+
+        .navbar-contact {
+            margin-left: 0;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .enquiry-btn {
+            padding: 9px 13px;
+        }
+
+    }
+
+    @media (max-width: 900px) {
+
+        .location-main {
+            grid-template-columns: 1fr;
+        }
+
+        .map-box iframe {
+            height: 350px;
+        }
+
+        .nearby-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+    }
+
+    @media (max-width: 600px) {
+
+        .location-section {
+            padding: 50px 15px;
+        }
+
+        .location-heading h2 {
+            font-size: 28px;
+        }
+
+        .nearby-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .location-details {
+            padding: 30px 25px;
+        }
+
+        .contact-buttons {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .contact-btn {
+            width: 100%;
+            min-width: auto;
+        }
+
+    }
+
+</style>
 
 </head>
 
@@ -28,21 +342,33 @@
 <!-- ================= NAVBAR ================= -->
 
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-    <div class="container">
 
+<div class="container">
 
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#home">
+
         <span class="brand-icon">
             <i class="bi bi-tree-fill"></i>
         </span>
+
         Power Starr Jungle Stay
+
     </a>
 
-    <button class="navbar-toggler" type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#PawarStar">
+
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+
         <span class="navbar-toggler-icon"></span>
+
     </button>
+
 
     <div class="collapse navbar-collapse" id="mainNavbar">
 
@@ -69,23 +395,50 @@
             </li>
 
             <li class="nav-item">
+                <a class="nav-link" href="#location">Location</a>
+            </li>
+
+            <li class="nav-item">
                 <a class="nav-link" href="#contact">Contact</a>
             </li>
 
-            <!-- Enquiry Button --> <a href="tel:9741596297" class="enquiry-btn"> 📞 Enquiry </a> <style> .enquiry-btn { display: inline-block; padding: 14px 28px; background: #2e7d32; color: white; text-decoration: none; font-size: 17px; font-weight: bold; border-radius: 8px; transition: 0.3s; } .enquiry-btn:hover { background: #1b5e20; transform: translateY(-2px); } </style>
-
         </ul>
 
-    </div>
-</div>
 
+        <!-- Two Call Buttons -->
+
+        <div class="navbar-contact">
+
+            <a
+                href="tel:+919741596297"
+                class="enquiry-btn">
+
+                <i class="bi bi-telephone"></i>
+                97415 96297
+
+            </a>
+
+
+            <a
+                href="tel:+919964146080"
+                class="enquiry-btn">
+
+                <i class="bi bi-telephone"></i>
+                99641 46080
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
 
 </nav>
 
 <!-- ================= HERO ================= -->
 
 <section id="home" class="hero-section">
-
 
 <div class="hero-overlay"></div>
 
@@ -96,28 +449,44 @@
         <div class="col-lg-8">
 
             <span class="hero-small-title">
-                WELCOME TO Power Starr Jungle Stay
+                WELCOME TO POWER STARR JUNGLE STAY
             </span>
 
             <h1>
-                Escape to Nature,<br>
+
+                Escape to Nature,
+                <br>
+
                 <span>Stay in Serenity</span>
+
             </h1>
 
             <p>
+
                 Experience peaceful cottage stays surrounded by
                 beautiful landscapes, fresh air and unforgettable
                 moments.
+
             </p>
+
 
             <div class="hero-buttons">
 
-                <a href="#cottages" class="btn btn-primary-custom">
+                <a
+                    href="#cottages"
+                    class="btn btn-primary-custom">
+
                     Explore Cottages
+
                 </a>
 
-                <a href="#contact" class="btn btn-outline-light-custom">
+
+                <a
+                    href="#contact"
+                    class="btn btn-outline-light-custom">
+
                     Contact Us
+
                 </a>
 
             </div>
@@ -128,22 +497,18 @@
 
 </div>
 
+
 <div class="scroll-down">
+
     <i class="bi bi-chevron-down"></i>
+
 </div>
-
-
-</section>
-
-
-
 
 </section>
 
 <!-- ================= ABOUT ================= -->
 
 <section id="about" class="section-padding about-section">
-
 
 <div class="container">
 
@@ -152,18 +517,26 @@
         <div class="col-lg-6">
 
             <div class="about-image-wrapper">
-                    <img src="Jungleview.jpeg" alt="Cottage"
-                    class="img-fluid about-image"
-                    alt="Nature">
-            </img>
+
+                <img
+                    src="Jungleview.jpeg"
+                    alt="Power Starr Jungle Stay"
+                    class="img-fluid about-image">
+
                 <div class="experience-box">
+
                     <strong>10+</strong>
-                    <span>Years of Hospitality</span>
+
+                    <span>
+                        Years of Hospitality
+                    </span>
+
                 </div>
 
             </div>
 
         </div>
+
 
         <div class="col-lg-6">
 
@@ -172,48 +545,85 @@
             </span>
 
             <h2 class="section-title">
-                A Peaceful Place<br>
+
+                A Peaceful Place
+                <br>
+
                 <span>To Slow Down</span>
+
             </h2>
 
-            <p class="section-text">
-                Welcome to Green Valley Cottages, a peaceful getaway
-                created for people who want to escape busy city life
-                and reconnect with nature.
-            </p>
 
             <p class="section-text">
-                Our cottages combine comfortable accommodation with
-                beautiful surroundings, delicious food and memorable
-                experiences for families, couples and groups.
+
+                Welcome to Power Starr Jungle Stay, a peaceful
+                getaway created for people who want to escape
+                busy city life and reconnect with nature.
+
             </p>
+
+
+            <p class="section-text">
+
+                Our cottages combine comfortable accommodation
+                with beautiful surroundings, delicious food and
+                memorable experiences for families, couples and groups.
+
+            </p>
+
 
             <div class="row mt-4">
 
                 <div class="col-6">
+
                     <div class="feature-small">
+
                         <i class="bi bi-tree"></i>
+
                         <div>
+
                             <strong>Natural</strong>
-                            <small>Beautiful surroundings</small>
+
+                            <small>
+                                Beautiful surroundings
+                            </small>
+
                         </div>
+
                     </div>
+
                 </div>
 
+
                 <div class="col-6">
+
                     <div class="feature-small">
+
                         <i class="bi bi-heart"></i>
+
                         <div>
+
                             <strong>Comfortable</strong>
-                            <small>Relaxing stay</small>
+
+                            <small>
+                                Relaxing stay
+                            </small>
+
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
 
-            <a href="#contact" class="btn btn-dark-custom mt-4">
+
+            <a
+                href="#contact"
+                class="btn btn-dark-custom mt-4">
+
                 Discover More
+
             </a>
 
         </div>
@@ -222,15 +632,14 @@
 
 </div>
 
-
 </section>
 
 <!-- ================= COTTAGES ================= -->
 
 <section id="cottages" class="section-padding cottages-section">
 
-
 <div class="container">
+
 
     <div class="text-center section-heading">
 
@@ -243,8 +652,10 @@
         </h2>
 
         <p>
+
             Choose the perfect accommodation for your peaceful
             getaway.
+
         </p>
 
     </div>
@@ -262,7 +673,8 @@
                 <div class="cottage-image">
 
                     <img
-                       <img src="cottage1.jpeg" alt="Jungleview Resort">
+                        src="cottage1.jpeg"
+                        alt="Deluxe Cottage">
 
                     <span class="price-tag">
                         ₹2,499 / Night
@@ -270,14 +682,20 @@
 
                 </div>
 
+
                 <div class="cottage-content">
 
-                    <h3>Deluxe Cottage</h3>
+                    <h3>
+                        Deluxe Cottage
+                    </h3>
 
                     <p>
+
                         A cozy cottage surrounded by greenery,
                         perfect for couples and small families.
+
                     </p>
+
 
                     <div class="amenities">
 
@@ -298,8 +716,13 @@
 
                     </div>
 
-                    <a href="#contact" class="btn cottage-btn">
+
+                    <a
+                        href="#contact"
+                        class="btn cottage-btn">
+
                         View Details
+
                     </a>
 
                 </div>
@@ -318,7 +741,7 @@
                 <div class="cottage-image">
 
                     <img
-                        <img src="cottage2.jpeg" alt="Jungleview Resort">
+                        src="cottage2.jpeg"
                         alt="Family Cottage">
 
                     <span class="price-tag">
@@ -327,14 +750,20 @@
 
                 </div>
 
+
                 <div class="cottage-content">
 
-                    <h3>Family Cottage</h3>
+                    <h3>
+                        Family Cottage
+                    </h3>
 
                     <p>
+
                         Spacious accommodation designed for
                         families and groups looking for comfort.
+
                     </p>
+
 
                     <div class="amenities">
 
@@ -355,8 +784,13 @@
 
                     </div>
 
-                    <a href="#contact" class="btn cottage-btn">
+
+                    <a
+                        href="#contact"
+                        class="btn cottage-btn">
+
                         View Details
+
                     </a>
 
                 </div>
@@ -375,7 +809,7 @@
                 <div class="cottage-image">
 
                     <img
-                        <img src="Cottage.jpeg" alt="Jungleview Resort">
+                        src="Cottage.jpeg"
                         alt="Premium Cottage">
 
                     <span class="price-tag">
@@ -384,14 +818,20 @@
 
                 </div>
 
+
                 <div class="cottage-content">
 
-                    <h3>Premium Cottage</h3>
+                    <h3>
+                        Premium Cottage
+                    </h3>
 
                     <p>
+
                         Enjoy a luxurious stay with spacious rooms,
                         private outdoor space and beautiful views.
+
                     </p>
+
 
                     <div class="amenities">
 
@@ -412,8 +852,13 @@
 
                     </div>
 
-                    <a href="#contact" class="btn cottage-btn">
+
+                    <a
+                        href="#contact"
+                        class="btn cottage-btn">
+
                         View Details
+
                     </a>
 
                 </div>
@@ -426,15 +871,14 @@
 
 </div>
 
-
 </section>
 
 <!-- ================= WHY CHOOSE US ================= -->
 
 <section class="why-section">
 
-
 <div class="container">
+
 
     <div class="text-center section-heading">
 
@@ -443,7 +887,9 @@
         </span>
 
         <h2 class="section-title">
+
             Everything You Need For A Perfect Stay
+
         </h2>
 
     </div>
@@ -451,19 +897,26 @@
 
     <div class="row g-4">
 
+
         <div class="col-lg-3 col-md-6">
 
             <div class="why-card">
 
                 <div class="why-icon">
+
                     <i class="bi bi-tree-fill"></i>
+
                 </div>
 
-                <h4>Beautiful Nature</h4>
+                <h4>
+                    Beautiful Nature
+                </h4>
 
                 <p>
+
                     Wake up surrounded by greenery and peaceful
                     natural landscapes.
+
                 </p>
 
             </div>
@@ -476,14 +929,20 @@
             <div class="why-card">
 
                 <div class="why-icon">
+
                     <i class="bi bi-house-heart-fill"></i>
+
                 </div>
 
-                <h4>Comfortable Stay</h4>
+                <h4>
+                    Comfortable Stay
+                </h4>
 
                 <p>
+
                     Clean, comfortable and thoughtfully designed
                     cottages.
+
                 </p>
 
             </div>
@@ -496,14 +955,20 @@
             <div class="why-card">
 
                 <div class="why-icon">
+
                     <i class="bi bi-egg-fried"></i>
+
                 </div>
 
-                <h4>Delicious Food</h4>
+                <h4>
+                    Delicious Food
+                </h4>
 
                 <p>
+
                     Enjoy fresh and delicious meals prepared
                     with care.
+
                 </p>
 
             </div>
@@ -516,14 +981,20 @@
             <div class="why-card">
 
                 <div class="why-icon">
+
                     <i class="bi bi-stars"></i>
+
                 </div>
 
-                <h4>Great Experience</h4>
+                <h4>
+                    Great Experience
+                </h4>
 
                 <p>
+
                     Create beautiful memories with your family
                     and friends.
+
                 </p>
 
             </div>
@@ -546,6 +1017,7 @@
 
     <div class="row align-items-center g-5">
 
+
         <div class="col-lg-5">
 
             <span class="section-subtitle">
@@ -553,18 +1025,27 @@
             </span>
 
             <h2 class="section-title">
+
                 Things To Do
                 <span>With Us</span>
+
             </h2>
 
             <p class="section-text">
+
                 Your stay isn't just about the room. Discover
                 activities and experiences that make your trip
                 special.
+
             </p>
 
-            <a href="#contact" class="btn btn-dark-custom mt-3">
+
+            <a
+                href="#contact"
+                class="btn btn-dark-custom mt-3">
+
                 Plan Your Experience
+
             </a>
 
         </div>
@@ -573,6 +1054,7 @@
         <div class="col-lg-7">
 
             <div class="row g-3">
+
 
                 <div class="col-6">
 
@@ -583,8 +1065,13 @@
                             alt="Trekking">
 
                         <div class="activity-overlay">
+
                             <h4>Trekking</h4>
-                            <p>Explore nature trails</p>
+
+                            <p>
+                                Explore nature trails
+                            </p>
+
                         </div>
 
                     </div>
@@ -601,8 +1088,13 @@
                             alt="Camping">
 
                         <div class="activity-overlay">
+
                             <h4>Camping</h4>
-                            <p>Sleep under the stars</p>
+
+                            <p>
+                                Sleep under the stars
+                            </p>
+
                         </div>
 
                     </div>
@@ -619,8 +1111,13 @@
                             alt="Nature Walk">
 
                         <div class="activity-overlay">
+
                             <h4>Nature Walk</h4>
-                            <p>Discover beautiful places</p>
+
+                            <p>
+                                Discover beautiful places
+                            </p>
+
                         </div>
 
                     </div>
@@ -637,8 +1134,13 @@
                             alt="Adventure">
 
                         <div class="activity-overlay">
+
                             <h4>Adventure</h4>
-                            <p>Fun for everyone</p>
+
+                            <p>
+                                Fun for everyone
+                            </p>
+
                         </div>
 
                     </div>
@@ -663,6 +1165,7 @@
 
 <div class="container">
 
+
     <div class="text-center section-heading">
 
         <span class="section-subtitle">
@@ -678,12 +1181,15 @@
 
     <div class="row g-3">
 
+
         <div class="col-lg-4 col-md-6">
 
             <div class="gallery-item large">
+
                 <img
-                     <img src="Gallary1.jpeg" alt="Jungleview">
-                    alt="Cottage">
+                    src="Gallary1.jpeg"
+                    alt="Power Starr Jungle Stay">
+
             </div>
 
         </div>
@@ -692,9 +1198,11 @@
         <div class="col-lg-4 col-md-6">
 
             <div class="gallery-item">
+
                 <img
-                     <img src="Gallary2.jpeg" alt="Jungleview">
-                    alt="Room">
+                    src="Gallary2.jpeg"
+                    alt="Jungle Stay Room">
+
             </div>
 
         </div>
@@ -703,9 +1211,11 @@
         <div class="col-lg-4 col-md-6">
 
             <div class="gallery-item">
+
                 <img
-                    <img src="Gallary4.jpeg" alt="Jungleview">
-                    alt="Cabin">
+                    src="Gallary4.jpeg"
+                    alt="Jungle Stay Cottage">
+
             </div>
 
         </div>
@@ -714,9 +1224,11 @@
         <div class="col-lg-4 col-md-6">
 
             <div class="gallery-item">
+
                 <img
-                   <img src="Gallary5.jpeg" alt="Jungleview">
-                    alt="Mountain">
+                    src="Gallary5.jpeg"
+                    alt="Dandeli Mountain">
+
             </div>
 
         </div>
@@ -725,9 +1237,11 @@
         <div class="col-lg-4 col-md-6">
 
             <div class="gallery-item">
+
                 <img
-                   <img src="Gallary6.jpeg" alt="Jungleview">
-                    alt="Nature">
+                    src="Gallary6.jpeg"
+                    alt="Dandeli Nature">
+
             </div>
 
         </div>
@@ -736,12 +1250,15 @@
         <div class="col-lg-4 col-md-6">
 
             <div class="gallery-item">
+
                 <img
-                    <img src="Gallary7.jpeg" alt="Jungleview">
-                    alt="Resort">
+                    src="Gallary7.jpeg"
+                    alt="Power Starr Resort">
+
             </div>
 
         </div>
+
 
     </div>
 
@@ -756,6 +1273,7 @@
 
 
 <div class="container">
+
 
     <div class="text-center">
 
@@ -781,14 +1299,20 @@
                 </div>
 
                 <p>
+
                     "A wonderful place to relax and spend quality
                     time with family. The cottages were clean,
                     comfortable and surrounded by beautiful nature."
+
                 </p>
 
-                <h5>Shrikanth & Family</h5>
+                <h5>
+                    Shrikanth & Family
+                </h5>
 
-                <span>Happy Guest</span>
+                <span>
+                    Happy Guest
+                </span>
 
             </div>
 
@@ -801,64 +1325,141 @@
 
 </section>
 
+<!-- ================= LOCATION ================= -->
 
-<!-- ================= LOCATION SECTION ================= -->
+<section
+    class="location-section"
+    id="location">
 
-<section class="location-section" id="location">
 
-    <div class="location-container">
+<div class="location-container">
 
-        <!-- Section Heading -->
-        <div class="location-heading">
-            <span>📍 LOCATION</span>
-            <h2>Experience Dandeli's Natural Beauty</h2>
-            <p>
-                Our property is located near the beautiful forests and
-                attractions of Dandeli, Karnataka.
-            </p>
+
+    <div class="location-heading">
+
+        <span>
+            📍 LOCATION
+        </span>
+
+        <h2>
+            Experience Dandeli's Natural Beauty
+        </h2>
+
+        <p>
+
+            Our property is located near the beautiful forests
+            and attractions of Dandeli, Karnataka.
+
+        </p>
+
+    </div>
+
+
+    <!-- Map + Details -->
+
+    <div class="location-main">
+
+
+        <div class="map-box">
+
+            <iframe
+                src="https://www.google.com/maps?q=15.2797346,74.5986826&output=embed"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+
         </div>
 
 
-        <!-- Map + Details -->
-        <div class="location-main">
+        <div class="location-details">
 
-            <!-- Google Map -->
-            <div class="map-box">
-
-                <iframe
-                    src="https://www.google.com/maps?q=15.2797346,74.5986826&output=embed"
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
-
+            <div class="location-icon">
+                📍
             </div>
 
+            <h3>
+                Power Starr Jungle Stay
+            </h3>
 
-            <!-- Location Details -->
-            <div class="location-details">
+            <p>
 
-                <div class="location-icon">
-                    📍
-                </div>
+                Dandeli, Uttara Kannada,
+                <br>
+                Karnataka, India
 
-                <h3>Power Starr Jungle Stay</h3>
+            </p>
+
+            <p class="location-description">
+
+                Enjoy the peaceful surroundings of Dandeli with
+                easy access to forests, the Kali River, wildlife
+                and exciting adventure activities.
+
+            </p>
+
+
+            <a
+                href="https://www.google.com/maps/dir/?api=1&destination=15.2797346,74.5986826"
+                target="_blank"
+                class="direction-btn">
+
+                🗺️ Get Directions
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Nearby Places -->
+
+    <div class="nearby-heading">
+
+        <h2>
+            Nearby Places to Explore
+        </h2>
+
+        <p>
+
+            Discover some of the most popular attractions around Dandeli.
+
+        </p>
+
+    </div>
+
+
+    <div class="nearby-grid">
+
+
+        <!-- Kali River -->
+
+        <div class="place-card">
+
+            <div class="place-image">
+                🌊
+            </div>
+
+            <div class="place-content">
+
+                <h3>
+                    Kali River
+                </h3>
 
                 <p>
-                    Dandeli, Uttara Kannada,<br>
-                    Karnataka, India
-                </p>
 
-                <p class="location-description">
-                    Enjoy the peaceful surroundings of Dandeli with easy
-                    access to forests, the Kali River, wildlife and
-                    exciting adventure activities.
+                    Enjoy the beautiful Kali River and experience
+                    rafting, kayaking and other river adventures.
+
                 </p>
 
                 <a
-                    href="https://www.google.com/maps/dir/?api=1&destination=15.2797346,74.5986826"
-                    target="_blank"
-                    class="direction-btn">
-                    🗺️ Get Directions
+                    href="https://www.google.com/maps/search/?api=1&query=Kali+River+Dandeli"
+                    target="_blank">
+
+                    View on Map →
+
                 </a>
 
             </div>
@@ -866,452 +1467,271 @@
         </div>
 
 
-        <!-- Nearby Places -->
-        <div class="nearby-heading">
+        <!-- Syntheri Rocks -->
 
-            <h2>Nearby Places to Explore</h2>
+        <div class="place-card">
 
-            <p>
-                Discover some of the most popular attractions around Dandeli.
-            </p>
-
-        </div>
-
-
-        <div class="nearby-grid">
-
-
-            <!-- Kali River -->
-            <div class="place-card">
-
-                <div class="place-image">
-                    🌊
-                </div>
-
-                <div class="place-content">
-
-                    <h3>Kali River</h3>
-
-                    <p>
-                        Enjoy the beautiful Kali River and experience
-                        rafting, kayaking and other river adventures.
-                    </p>
-
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Kali+River+Dandeli"
-                        target="_blank">
-                        View on Map →
-                    </a>
-
-                </div>
-
+            <div class="place-image">
+                🪨
             </div>
 
+            <div class="place-content">
 
-            <!-- Syntheri Rocks -->
-            <div class="place-card">
+                <h3>
+                    Syntheri Rocks
+                </h3>
 
-                <div class="place-image">
-                    🪨
-                </div>
+                <p>
 
-                <div class="place-content">
+                    A spectacular natural rock formation surrounded
+                    by the forests of Dandeli Wildlife Sanctuary.
 
-                    <h3>Syntheri Rocks</h3>
+                </p>
 
-                    <p>
-                        A spectacular natural rock formation surrounded
-                        by the forests of Dandeli Wildlife Sanctuary.
-                    </p>
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Syntheri+Rocks+Dandeli"
+                    target="_blank">
 
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Syntheri+Rocks+Dandeli"
-                        target="_blank">
-                        View on Map →
-                    </a>
+                    View on Map →
 
-                </div>
-
-            </div>
-
-
-            <!-- Jungle Safari -->
-            <div class="place-card">
-
-                <div class="place-image">
-                    🐅
-                </div>
-
-                <div class="place-content">
-
-                    <h3>Jungle Safari</h3>
-
-                    <p>
-                        Explore the forests of Kali Tiger Reserve and
-                        experience Dandeli's rich wildlife.
-                    </p>
-
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Dandeli+Wildlife+Sanctuary"
-                        target="_blank">
-                        View on Map →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Moulangi Eco Park -->
-            <div class="place-card">
-
-                <div class="place-image">
-                    🌳
-                </div>
-
-                <div class="place-content">
-
-                    <h3>Moulangi Eco Park</h3>
-
-                    <p>
-                        A beautiful forest destination ideal for nature
-                        walks, sightseeing and family outings.
-                    </p>
-
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Moulangi+Eco+Park+Dandeli"
-                        target="_blank">
-                        View on Map →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Kavala Caves -->
-            <div class="place-card">
-
-                <div class="place-image">
-                    🕳️
-                </div>
-
-                <div class="place-content">
-
-                    <h3>Kavala Caves</h3>
-
-                    <p>
-                        Explore the fascinating caves and natural
-                        formations within the Dandeli forest region.
-                    </p>
-
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Kavala+Caves+Dandeli"
-                        target="_blank">
-                        View on Map →
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <!-- Shiroli Peak -->
-            <div class="place-card">
-
-                <div class="place-image">
-                    ⛰️
-                </div>
-
-                <div class="place-content">
-
-                    <h3>Shiroli Peak</h3>
-
-                    <p>
-                        Enjoy panoramic Western Ghats views and a
-                        beautiful experience for nature lovers.
-                    </p>
-
-                    <a
-                        href="https://www.google.com/maps/search/?api=1&query=Shiroli+Peak+Dandeli"
-                        target="_blank">
-                        View on Map →
-                    </a>
-
-                </div>
+                </a>
 
             </div>
 
         </div>
+
+
+        <!-- Jungle Safari -->
+
+        <div class="place-card">
+
+            <div class="place-image">
+                🐅
+            </div>
+
+            <div class="place-content">
+
+                <h3>
+                    Jungle Safari
+                </h3>
+
+                <p>
+
+                    Explore the forests of Kali Tiger Reserve and
+                    experience Dandeli's rich wildlife.
+
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Dandeli+Wildlife+Sanctuary"
+                    target="_blank">
+
+                    View on Map →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Moulangi Eco Park -->
+
+        <div class="place-card">
+
+            <div class="place-image">
+                🌳
+            </div>
+
+            <div class="place-content">
+
+                <h3>
+                    Moulangi Eco Park
+                </h3>
+
+                <p>
+
+                    A beautiful forest destination ideal for nature
+                    walks, sightseeing and family outings.
+
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Moulangi+Eco+Park+Dandeli"
+                    target="_blank">
+
+                    View on Map →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Kavala Caves -->
+
+        <div class="place-card">
+
+            <div class="place-image">
+                🕳️
+            </div>
+
+            <div class="place-content">
+
+                <h3>
+                    Kavala Caves
+                </h3>
+
+                <p>
+
+                    Explore the fascinating caves and natural
+                    formations within the Dandeli forest region.
+
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Kavala+Caves+Dandeli"
+                    target="_blank">
+
+                    View on Map →
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Shiroli Peak -->
+
+        <div class="place-card">
+
+            <div class="place-image">
+                ⛰️
+            </div>
+
+            <div class="place-content">
+
+                <h3>
+                    Shiroli Peak
+                </h3>
+
+                <p>
+
+                    Enjoy panoramic Western Ghats views and a
+                    beautiful experience for nature lovers.
+
+                </p>
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Shiroli+Peak+Dandeli"
+                    target="_blank">
+
+                    View on Map →
+
+                </a>
+
+            </div>
+
+        </div>
+
 
     </div>
 
+</div>
+
+
 </section>
-
-
-<!-- ================= LOCATION CSS ================= -->
-
-<style>
-
-.location-section {
-    padding: 80px 20px;
-    background: #f6f8f5;
-    font-family: Arial, sans-serif;
-}
-
-.location-container {
-    max-width: 1200px;
-    margin: auto;
-}
-
-
-/* Heading */
-
-.location-heading {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.location-heading span {
-    color: #2e7d32;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.location-heading h2 {
-    font-size: 38px;
-    margin: 12px 0;
-    color: #1d3320;
-}
-
-.location-heading p {
-    color: #666;
-    font-size: 17px;
-}
-
-
-/* Map Section */
-
-.location-main {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    background: white;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.10);
-    margin-bottom: 70px;
-}
-
-.map-box iframe {
-    width: 100%;
-    height: 450px;
-    border: 0;
-    display: block;
-}
-
-
-/* Location Details */
-
-.location-details {
-    padding: 45px 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.location-icon {
-    font-size: 42px;
-}
-
-.location-details h3 {
-    font-size: 27px;
-    color: #1d3320;
-    margin: 15px 0;
-}
-
-.location-details p {
-    color: #666;
-    line-height: 1.7;
-}
-
-.location-description {
-    margin-top: 10px;
-}
-
-
-.direction-btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 14px 22px;
-    background: #2e7d32;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    text-align: center;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.direction-btn:hover {
-    background: #1b5e20;
-    transform: translateY(-2px);
-}
-
-
-/* Nearby Heading */
-
-.nearby-heading {
-    text-align: center;
-    margin-bottom: 35px;
-}
-
-.nearby-heading h2 {
-    font-size: 32px;
-    color: #1d3320;
-    margin-bottom: 8px;
-}
-
-.nearby-heading p {
-    color: #666;
-}
-
-
-/* Nearby Cards */
-
-.nearby-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-}
-
-.place-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
-}
-
-.place-card:hover {
-    transform: translateY(-7px);
-    box-shadow: 0 12px 30px rgba(0,0,0,0.14);
-}
-
-.place-image {
-    height: 130px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
-    background: #e8f1e6;
-}
-
-.place-content {
-    padding: 22px;
-}
-
-.place-content h3 {
-    color: #1d3320;
-    font-size: 21px;
-    margin-top: 0;
-}
-
-.place-content p {
-    color: #666;
-    line-height: 1.6;
-    min-height: 75px;
-}
-
-.place-content a {
-    color: #2e7d32;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-
-/* Mobile */
-
-@media (max-width: 900px) {
-
-    .location-main {
-        grid-template-columns: 1fr;
-    }
-
-    .map-box iframe {
-        height: 350px;
-    }
-
-    .nearby-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-}
-
-
-@media (max-width: 600px) {
-
-    .location-section {
-        padding: 50px 15px;
-    }
-
-    .location-heading h2 {
-        font-size: 28px;
-    }
-
-    .nearby-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .location-details {
-        padding: 30px 25px;
-    }
-
-}
-
-</style>
-
 
 <!-- ================= CONTACT ================= -->
 
-<section id="contact" class="contact-section">
+<section
+    id="contact"
+    class="contact-section">
 
 
 <div class="container">
 
     <div class="row justify-content-center">
 
-        <div class="col-lg-8 text-center">
+        <div class="col-lg-9 text-center">
+
 
             <span class="section-subtitle">
                 GET IN TOUCH
             </span>
 
+
             <h2 class="section-title text-white">
                 Ready For Your Getaway?
             </h2>
 
+
             <p class="contact-text">
+
                 Contact us today and start planning your perfect
                 stay surrounded by nature.
+
             </p>
+
 
             <div class="contact-buttons">
 
-                <a href="tel:+919964146080"
-                   class="btn btn-light contact-btn">
+
+                <!-- Phone 1 -->
+
+                <a
+                    href="tel:+919741596297"
+                    class="btn btn-light contact-btn">
 
                     <i class="bi bi-telephone"></i>
-                    Call Us 
+
+                    Call: +91 97415 96297
 
                 </a>
 
-                <a href="https://wa.me/919741596297"
-                   class="btn btn-whatsapp contact-btn">
+
+                <!-- WhatsApp 1 -->
+
+                <a
+                    href="https://wa.me/919741596297"
+                    target="_blank"
+                    class="btn btn-whatsapp contact-btn">
 
                     <i class="bi bi-whatsapp"></i>
-                    WhatsApp
+
+                    WhatsApp: +91 97415 96297
 
                 </a>
+
+
+                <!-- Phone 2 -->
+
+                <a
+                    href="tel:+919964146080"
+                    class="btn btn-light contact-btn">
+
+                    <i class="bi bi-telephone"></i>
+
+                    Call: +91 99641 46080
+
+                </a>
+
+
+                <!-- WhatsApp 2 -->
+
+                <a
+                    href="https://wa.me/919964146080"
+                    target="_blank"
+                    class="btn btn-whatsapp contact-btn">
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    WhatsApp: +91 99641 46080
+
+                </a>
+
 
             </div>
 
@@ -1333,35 +1753,51 @@
 
     <div class="row g-4">
 
+
+        <!-- About -->
+
         <div class="col-lg-4">
 
-            <a class="footer-brand" href="#">
+            <a
+                class="footer-brand"
+                href="#home">
+
                 <i class="bi bi-tree-fill"></i>
-               Power Starr Jungle Stay
+
+                Power Starr Jungle Stay
+
             </a>
 
+
             <p>
+
                 A peaceful destination where nature, comfort
                 and unforgettable experiences come together.
+
             </p>
+
 
             <div class="social-icons">
 
-                <a href="#">
+                <a href="#" aria-label="Facebook">
                     <i class="bi bi-facebook"></i>
                 </a>
 
-                <a href="#">
+                <a href="#" aria-label="Instagram">
                     <i class="bi bi-instagram"></i>
                 </a>
 
-                <a href="#">
+                <a href="#" aria-label="YouTube">
                     <i class="bi bi-youtube"></i>
                 </a>
 
-                <a href="#">
+                <a
+                    href="https://wa.me/919741596297"
+                    target="_blank"
+                    aria-label="WhatsApp">
+
                     <i class="bi bi-whatsapp"></i>
-                    
+
                 </a>
 
             </div>
@@ -1369,54 +1805,176 @@
         </div>
 
 
+
+        <!-- Quick Links -->
+
         <div class="col-lg-2 col-md-4">
 
-            <h5>Quick Links</h5>
+            <h5>
+                Quick Links
+            </h5>
 
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#cottages">Cottages</a></li>
-                <li><a href="#gallery">Gallery</a></li>
+
+                <li>
+                    <a href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#about">
+                        About
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#cottages">
+                        Cottages
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
             </ul>
 
         </div>
 
 
+
+        <!-- Experiences -->
+
         <div class="col-lg-3 col-md-4">
 
-            <h5>Experiences</h5>
+            <h5>
+                Experiences
+            </h5>
 
             <ul>
-                <li><a href="#activities">Trekking</a></li>
-                <li><a href="#activities">Camping</a></li>
-                <li><a href="#activities">Nature Walk</a></li>
-                <li><a href="#activities">Adventure</a></li>
+
+                <li>
+                    <a href="#activities">
+                        Trekking
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#activities">
+                        Camping
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#activities">
+                        Nature Walk
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#activities">
+                        Adventure
+                    </a>
+                </li>
+
             </ul>
 
         </div>
 
 
+
+        <!-- Contact -->
+
         <div class="col-lg-3 col-md-4">
 
-            <h5>Contact</h5>
+            <h5>
+                Contact
+            </h5>
+
 
             <ul class="footer-contact">
 
+
                 <li>
+
                     <i class="bi bi-telephone"></i>
-                    +91 9964146080
+
+                    <a href="tel:+919741596297">
+
+                        +91 97415 96297
+
+                    </a>
+
                 </li>
 
+
                 <li>
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    <a
+                        href="https://wa.me/919741596297"
+                        target="_blank">
+
+                        WhatsApp
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <i class="bi bi-telephone"></i>
+
+                    <a href="tel:+919964146080">
+
+                        +91 99641 46080
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
+                    <i class="bi bi-whatsapp"></i>
+
+                    <a
+                        href="https://wa.me/919964146080"
+                        target="_blank">
+
+                        WhatsApp
+
+                    </a>
+
+                </li>
+
+
+                <li>
+
                     <i class="bi bi-envelope"></i>
-                    rajashekhar.awsac@gmail.com
+
+                    <a href="mailto:rajashekhar.awsac@gmail.com">
+
+                        rajashekhar.awsac@gmail.com
+
+                    </a>
+
                 </li>
 
+
                 <li>
+
                     <i class="bi bi-geo-alt"></i>
-                    Karnataka, India
+
+                    Dandeli, Karnataka, India
+
                 </li>
+
 
             </ul>
 
@@ -1427,14 +1985,16 @@
 
     <hr>
 
+
     <div class="footer-bottom">
 
         <p>
-            © 2026 Power Starr Jungle Stay. All Rights Reserved.
+            © 2026 Power Starr Jungle Stay.
+            All Rights Reserved.
         </p>
 
         <p>
-           Designed with ❤️ for Dandeli Nature & Adventure ❤️
+            Designed with ❤️ for Dandeli Nature & Adventure ❤️
         </p>
 
     </div>
@@ -1444,9 +2004,12 @@
 
 </footer>
 
-<!-- Bootstrap JS -->
+<!-- ================= BOOTSTRAP JS ================= -->
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
 
 </body>
+
 </html>
