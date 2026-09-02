@@ -341,26 +341,7 @@
 <script>
 
 </script>
-    function sendEnquiry(event) {
-    event.preventDefault();
-
-    var name = document.getElementById("name").value;
-    var mobile = document.getElementById("mobile").value;
-    var guests = document.getElementById("guests").value;
-    var message = document.getElementById("message").value;
-
-    var text =
-        "Hello, I would like to make an enquiry.%0A%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Mobile: " + encodeURIComponent(mobile) + "%0A" +
-        "Guests: " + encodeURIComponent(guests) + "%0A" +
-        "Message: " + encodeURIComponent(message);
-
-    window.open(
-        "https://wa.me/919741596297?text=" + text,
-        "_blank"
-    );
-}
+ 
 <body>
 
 <!-- ================= NAVBAR ================= -->
@@ -2035,5 +2016,25 @@
 </script>
 
 </body>
+       function sendEnquiry(event) {
+    event.preventDefault();
+
+    var name = document.getElementById("name").value;
+    var mobile = document.getElementById("mobile").value;
+    var guests = document.getElementById("guests").value;
+    var message = document.getElementById("message").value;
+
+    var text =
+        "Hello, I would like to make an enquiry.%0A%0A" +
+        "Name: " + encodeURIComponent(name) + "%0A" +
+        "Mobile: " + encodeURIComponent(mobile) + "%0A" +
+        "Guests: " + encodeURIComponent(guests) + "%0A" +
+        "Message: " + encodeURIComponent(message);
+
+    window.open(
+        "https://wa.me/919741596297?text=" + text,
+        "_blank"
+    );
+}
 
 </html>
